@@ -1,0 +1,9 @@
+
+# Frontend (React)
+axios
+react-router-dom
+@mui/material
+@emotion/react
+@emotion/styled
+react-plotly.js
+plotly.js
