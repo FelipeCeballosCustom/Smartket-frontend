@@ -1,0 +1,26 @@
+Qué debes hacer?
+
+npm i 
+npm run dev 
+
+y listo, ya está!
+
+
+
+-------------------------------------
+Qué se hizo para configurarlo ? 
+
+a. Se creó proyecto en react con vite (JavaScript+SWC) 
+b. Se hizo instalación dependencias JavaScript
+Desde la carpeta del proyecto React (smarket-frontend):
+
+bash
+npm install axios react-router-dom @mui/material @emotion/react @emotion/styled react-plotly.js plotly.js
+
+c. Configuración de Variables de entorno (para frontend)
+se usa .env con prefijo VITE_:
+
+env
+VITE_API_URL=http://localhost:8000
+
+d. se añaden variables de entorno en .env
