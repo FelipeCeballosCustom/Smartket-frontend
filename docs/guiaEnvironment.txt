@@ -1,7 +1,18 @@
 Qué debes hacer?
 
-npm i 
-npm run dev 
+1. Si lo quieres actualizar sin volverlo a clonar(Si clonaste este repositorio NO tienes que hacer este paso, pasa al paso 2): 
+
+1.1. cambia el nombre de esta carpeta a kebab-case (ponle la 's' inicial en minúscula) así:
+smarket-frontend
+1.2. En la terminal escribe: 
+        git remote remove origin
+        git remote add origin https://github.com/FelipeCeballosCustom/smartket-frontend.git
+        git pull origin main 
+    y acepta todos los cambios! 
+
+2. Levanta React, en la terminal escribe:
+        npm i 
+        npm run dev 
 
 y listo, ya está!
 
@@ -10,17 +21,17 @@ y listo, ya está!
 -------------------------------------
 Qué se hizo para configurarlo ? 
 
-a. Se creó proyecto en react con vite (JavaScript+SWC) 
-b. Se hizo instalación dependencias JavaScript
-Desde la carpeta del proyecto React (smarket-frontend):
+a. Se creó proyecto en react con vite (npm create @vitelatest con JavaScript+SWC) 
+b. Se hizo instalación dependencias JavaScript:
+        Desde la carpeta del proyecto React (smarket-frontend):
 
-bash
-npm install axios react-router-dom @mui/material @emotion/react @emotion/styled react-plotly.js plotly.js
+        bash
+        npm install axios react-router-dom @mui/material @emotion/react @emotion/styled react-plotly.js plotly.js
 
 c. Configuración de Variables de entorno (para frontend)
-se usa .env con prefijo VITE_:
+        se usa .env con prefijo VITE_:
 
-env
-VITE_API_URL=http://localhost:8000
+        env
+        VITE_API_URL=http://localhost:8000
 
 d. se añaden variables de entorno en .env
