@@ -1,6 +1,9 @@
-import React from "react";
+import React, {useState} from "react";
 import "./Home.css";
+import Form from "../components/Form";
+//import { useNavigate } from 'react-router-dom';
 import { House, MagnifyingGlass, Plus } from 'phosphor-react';
+//import RouterPrincipal from "../routes/routerPrincipal";
 import {
     ShoppingCart,
     TShirt,
@@ -57,6 +60,8 @@ const categories = [
 const tabs = ["Mercado", "Hogar", "Ropa", "Mascotas", "Deudas"];
 
 const Home = () => {
+    //const navigate = useNavigate();
+    const [modalAbierto, setModalAbierto] = useState(false);
     return (
         <div className="home-screen">
             <div className="home-content">
@@ -72,7 +77,17 @@ const Home = () => {
                 </div>
                 <div className="home-actions">
                     <button className="home-action-scan">Escanear <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#222" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="7" width="18" height="13" rx="2" /><circle cx="12" cy="13.5" r="3.5" /><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" /></svg></button>
-                    <button className="home-action-add">Agregar <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#222" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="9" /><path d="M12 8v8M8 12h8" /></svg></button>
+                    <button className="home-action-add" onClick={() => setModalAbierto(true)}>Agregar <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#222" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="9" /><path d="M12 8v8M8 12h8" /></svg></button>
+                     {/* Modal aparece aquí cuando está abierto */}
+      {modalAbierto && (
+        <Form
+          onClose={() => setModalAbierto(false)}
+          onSave={() => {
+            // lógica para guardar la categoría
+            setModalAbierto(false);
+          }}
+        />
+      )}
                 </div>
                 <div className="home-grid">
                     {categories.map(cat => (
